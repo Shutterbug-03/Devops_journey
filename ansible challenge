@@ -1,0 +1,49 @@
+# 🛠️ Ansible Practice Challenges - Dharansh Singh
+
+This repository contains my solutions to 11 Ansible challenges that demonstrate foundational to intermediate-level infrastructure automation using Ansible.
+
+---
+
+## 🔥 Challenges Covered
+
+| Challenge | Description |
+|----------|-------------|
+| 1        | Inventory file with localhost |
+| 2        | `ansible all -m ping` for connectivity |
+| 3        | Copy file to remote node |
+| 4        | Install Nginx using package module |
+| 5        | Write playbook to install and start Nginx |
+| 6        | Use external variable file in playbook |
+| 7        | Add handler to restart Nginx if config changes |
+| 8        | Create a system user using Ansible |
+| 9        | Use task tags and run tagged tasks |
+| 10       | Simulate changes with `--check` mode |
+| 11       | Complete web server provisioning playbook |
+
+---
+
+## 📂 File Reference
+
+| File                | Purpose |
+|---------------------|---------|
+| `inventory.ini`     | Ansible inventory using localhost |
+| `vars.yml`          | Variables file used in playbooks |
+| `index.html`        | Static webpage deployed via playbook |
+| `hello.txt`         | File used in Challenge 3 |
+| `playbook.yml`      | Final provisioning playbook (Challenge 11) |
+| `install_nginx.yml` | Core playbook with package, service, handler |
+| `create_user.yml`   | Creates `deployuser` using `ansible.builtin.user` |
+| `tagged_tasks.yml`  | Example of using tags in tasks |
+| `check_mode.yml`    | Sample playbook to test `--check` mode |
+| `nginx.conf`        | Optional custom config for Nginx (used in handlers) |
+
+---
+
+## 🚀 How to Run
+
+```bash
+ansible-playbook -i inventory.ini playbook.yml
+
+ansible-playbook -i inventory.ini playbook.yml --check
+
+ansible-playbook -i inventory.ini playbook.yml --tags install
